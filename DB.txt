@@ -1,0 +1,30 @@
+4. Course
+CourseID, CourseNum, CourseDes,
+
+1. Student
+StudentID, UPI, PassWord, FirstName, LastName, gender, DoB, Email, PhoneNum,
+
+5. StudentCourse
+StudentCourseID, StudentID, CourseID, courseMark, GradeID(A, B, C, D)
+
+6. Grade
+GradeID, GradeRange
+
+2. Lecturer
+LecturerID, UPI, PassWord, FirstName, LastName, gender, DoB, Email, PhoneNum
+
+3. Dean
+DeanID, UPI, PassWord, FirstName, LastName, gender, DoB, Email, PhoneNum
+
+Another two tables for lecturerCourse and deanCourse
+----------------------------------------------------------------
+Course
+Grade
+People(UPI,Password,FirstName,LastName,Gender,Dob,Email,PhoneNum,Identity)
+Student(studentID,upi)
+Lecturer(LecturerID,upi)
+Dean(LecturerID,upi)
+StudentCourse
+LecturerCourse
+deanCourse
+//Cause onemore step to access studentCourse,LecturerCourse and deanCourse, less time to access personal data.
