@@ -32,8 +32,16 @@ namespace Fake_Dashboard
         {
             var dbconnection = new SQLiteConnection("data source = Fake_Dashboard.db");
             dbconnection.Open();
-            int upitemp = 123456;
-            string passwordtemp = "123456";
+            //string tempupi = "11111111";
+            //string temppassword = "12345678";
+            //if(tempupi == this.UPITextBox.Text.ToString() | temppassword == this.PasswordTextBox.Text)
+            //{
+            //    MessageBox.Show("w");
+            //}
+            //else
+            //{
+            //    this.LoginDetailLabel.Visible = true;
+            //}
             string sql = "SELECT UPI,Password FROM People";
             SQLiteCommand command = new SQLiteCommand(sql,dbconnection);
             SQLiteDataReader reader = command.ExecuteReader();
