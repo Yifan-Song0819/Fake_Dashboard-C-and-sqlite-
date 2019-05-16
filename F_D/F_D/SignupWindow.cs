@@ -109,6 +109,51 @@ namespace F_D
             role_picked = role_array[true_index];
             return role_picked;
         }
+
+        protected void check_wrong_message(Boolean empty_user, Boolean same_passwd, Boolean checkEmail, Boolean checkPhone)
+        {
+            if (empty_user == true)
+            {
+                label12.Show();
+            }
+            else
+            {
+                label12.Hide();
+            }
+
+            if (same_passwd == false)
+            {
+                label13.Show();
+            }
+            else
+            {
+                label13.Hide();
+            }
+
+            if (checkEmail == false)
+            {
+                label14.Show();
+            }
+            else
+            {
+                label14.Hide();
+            }
+
+            if (checkPhone == false)
+            {
+                label15.Show();
+            }
+            else
+            {
+                label15.Hide();
+            }
+
+            if (empty_user == false && same_passwd == true && checkEmail == true && checkPhone == true)
+            {
+                MessageBox.Show("Sign up successful!");
+            }
+        }
+
         protected void CreateAccount(object sender, EventArgs e)
         {
 
@@ -150,47 +195,7 @@ namespace F_D
 
 
 
-
-            if (empty_user == true)
-            {
-                label12.Show();
-            }
-            else
-            {
-                label12.Hide();
-            }
-
-            if (same_passwd == false)
-            {
-                label13.Show();
-            }
-            else
-            {
-                label13.Hide();
-            }
-
-            if(checkEmail == false)
-            {
-                label14.Show();
-            }
-            else
-            {
-                label14.Hide();
-            }
-
-            if (checkPhone == false)
-            {
-                label15.Show();
-            }
-            else
-            {
-                label15.Hide();
-            }
-
-            if (empty_user == false && same_passwd == true && checkEmail == true && checkPhone == true)
-            {
-                MessageBox.Show("Sign up successful!");
-            }
+            check_wrong_message(empty_user, same_passwd, checkEmail, checkPhone);
         }
 
 
