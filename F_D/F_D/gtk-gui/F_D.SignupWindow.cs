@@ -72,6 +72,8 @@ namespace F_D
 
 		private global::Gtk.ComboBox combobox1;
 
+		private global::Gtk.Label label16;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -375,6 +377,14 @@ namespace F_D
 			global::Gtk.Fixed.FixedChild w33 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.combobox1]));
 			w33.X = 170;
 			w33.Y = 346;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.label16 = new global::Gtk.Label();
+			this.label16.Name = "label16";
+			this.label16.LabelProp = global::Mono.Unix.Catalog.GetString("label1");
+			this.fixed3.Add(this.label16);
+			global::Gtk.Fixed.FixedChild w34 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.label16]));
+			w34.X = 720;
+			w34.Y = 350;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{

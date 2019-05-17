@@ -552,6 +552,16 @@ Secret</property>
             <property name="Y">346</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.Label" id="label16">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">label1</property>
+          </widget>
+          <packing>
+            <property name="X">720</property>
+            <property name="Y">350</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>

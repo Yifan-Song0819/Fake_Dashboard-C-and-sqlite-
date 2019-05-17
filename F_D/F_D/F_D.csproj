@@ -79,6 +79,7 @@
     <Compile Include="gtk-gui\F_D.StudentWindow.cs" />
     <Compile Include="SignupWindow.cs" />
     <Compile Include="gtk-gui\F_D.SignupWindow.cs" />
+    <Compile Include="People.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libsqlite3.dylib" />

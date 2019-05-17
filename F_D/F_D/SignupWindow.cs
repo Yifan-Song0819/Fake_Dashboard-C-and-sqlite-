@@ -40,7 +40,7 @@ namespace F_D
             label9.Text = "Date of Birth:";
             label10.Text = "Email:";
             label11.Text = "Phone Number:";
-
+            label16.Text = "D(2)/M(2)/Y(4)";
             radiobutton1.Label = "Dean";
             radiobutton2.Label = "Lecturer";
             radiobutton3.Label = "Student";
@@ -110,6 +110,8 @@ namespace F_D
             return role_picked;
         }
 
+
+        //check the wrong message and if not pop up the message box
         protected void check_wrong_message(Boolean empty_user, Boolean same_passwd, Boolean checkEmail, Boolean checkPhone)
         {
             if (empty_user == true)
@@ -154,6 +156,60 @@ namespace F_D
             }
         }
 
+        protected void insert_into_db(People a_people)
+        {
+            Console.WriteLine(a_people.UPI);
+            Console.WriteLine(a_people.passwd);
+            Console.WriteLine(a_people.gender);
+
+            db dataBaseObject = new db();
+            dataBaseObject.myConnection.Open();
+
+
+            SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
+            //a_command.CommandText = "insert into People(UPI, Password, Gender) Values(@param1, @param2, @param3)";
+            a_command.CommandText = "insert into People Values(@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8,  @param9)";
+            a_command.Parameters.Add(new SQLiteParameter("@param1", a_people.UPI));
+            a_command.Parameters.Add(new SQLiteParameter("@param2", a_people.passwd));
+            a_command.Parameters.Add(new SQLiteParameter("@param3", a_people.gender));
+            a_command.Parameters.Add(new SQLiteParameter("@param4", a_people.firstName));
+            a_command.Parameters.Add(new SQLiteParameter("@param5", a_people.familyName));
+            a_command.Parameters.Add(new SQLiteParameter("@param6", a_people.email));
+            a_command.Parameters.Add(new SQLiteParameter("@param7", a_people.phone));
+            a_command.Parameters.Add(new SQLiteParameter("@param8", a_people.role));
+            a_command.Parameters.Add(new SQLiteParameter("@param9", a_people.dob));
+            a_command.ExecuteNonQuery();
+            dataBaseObject.myConnection.Close();
+        } 
+    
+
+        protected void sign_up_people(string userName, string passwd, string firstName, string familyName, string gender, string dob, string email, string phoneNum, string role_picked)
+        {
+            People a_people = new People(userName, passwd, role_picked);
+            a_people.firstName = firstName;
+            a_people.familyName = familyName;
+            a_people.gender = gender;
+            a_people.dob = dob;
+            a_people.email = email;
+            a_people.phone = phoneNum;
+            string[] a_list = a_people.create_variables_array();
+           
+            for(int i = 0; i<a_list.Length; i++)
+            {
+                if (String.IsNullOrEmpty(a_list[i]))
+                {
+                    a_list[i] = "NA";
+                }
+            }
+
+            insert_into_db(a_people);
+            //for(int i = 0; i<a_list.Length; i++)
+            //{
+            //    Console.WriteLine(a_list[i]);
+            //}
+
+        }
+
         protected void CreateAccount(object sender, EventArgs e)
         {
 
@@ -174,26 +230,35 @@ namespace F_D
             string rePasswd = entry3.Text;
             Boolean same_passwd = check_same_passwd(passwd, rePasswd);
 
+            string firstName = entry4.Text;
+            string familyName = entry5.Text;
+
+            //the value from combobox
+            string gender = combobox1.ActiveText;
+            string dob = entry7.Text;
 
             string email = entry8.Text;
             string phoneNum = entry9.Text;
             Boolean checkEmail = check_email(email);
             Boolean checkPhone = check_phoneNum(phoneNum);
 
-            //the value from combobox
-            string f_c = combobox1.ActiveText;
-            Console.WriteLine(f_c);
 
+            //Console.WriteLine(f_c);
+            sign_up_people(userName, passwd, firstName, familyName, gender, dob, email, phoneNum, role_picked);
+
+
+
+
+
+
+            // worked
             //db dataBaseObject = new db();
             //dataBaseObject.myConnection.Open();
-            //string sqlStatement = "insert into Course(CourseID, CourseNum, CourseDes) Values(100, '120', 22222)";
+            //string sqlStatement = "insert into People(UPI, Password, Gender) Values('yson', '123', 'male')";
             //SQLiteCommand sqlCommand = new SQLiteCommand(sqlStatement);
             //sqlCommand.Connection = dataBaseObject.myConnection;
             //sqlCommand.ExecuteNonQuery();
             //dataBaseObject.myConnection.Close();
-
-
-
 
             check_wrong_message(empty_user, same_passwd, checkEmail, checkPhone);
         }
