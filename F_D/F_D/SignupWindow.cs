@@ -4,11 +4,13 @@ using System.Windows.Forms;
 using Gtk;
 using System.Data.SQLite;
 using F_D;
+using System.Collections.Generic;
 
 namespace F_D
 {
     public partial class SignupWindow : Gtk.Window
     {
+        //public static List<string> userList = new List<string>();
         public SignupWindow(): base(Gtk.WindowType.Toplevel)
         {
             Build();
@@ -156,53 +158,81 @@ namespace F_D
             }
         }
 
-        protected void insert_into_db(People a_people)
+        protected Boolean check_duplicate_username(string a_user)
         {
-            Console.WriteLine(a_people.UPI);
-            Console.WriteLine(a_people.passwd);
-            Console.WriteLine(a_people.gender);
-
+            List<string> userList = new List<string>();
             db dataBaseObject = new db();
             dataBaseObject.myConnection.Open();
-
-
             SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
-            //a_command.CommandText = "insert into People(UPI, Password, Gender) Values(@param1, @param2, @param3)";
+            a_command.CommandText = "select UPI from People";
+            //a_command.CommandType = CommandText;
+            SQLiteDataReader r = a_command.ExecuteReader();
+            while (r.Read())
+            {
+                userList.Add(Convert.ToString(r["UPI"]));
+            }
+            dataBaseObject.myConnection.Close();
+            //for (int i = 0; i < userList.Count; i++)
+            //{
+            //    Console.WriteLine(userList[i]);
+            //}
+            Boolean res = true;
+            if (userList.Contains(a_user)){
+                res = false;
+            }
+            return res;
+        }
+
+
+        protected void insert_into_db(People a_people)
+        { 
+            db dataBaseObject = new db();
+            dataBaseObject.myConnection.Open();
+            SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
             a_command.CommandText = "insert into People Values(@param1, @param2, @param3, @param4, @param5, @param6, @param7, @param8,  @param9)";
             a_command.Parameters.Add(new SQLiteParameter("@param1", a_people.UPI));
             a_command.Parameters.Add(new SQLiteParameter("@param2", a_people.passwd));
-            a_command.Parameters.Add(new SQLiteParameter("@param3", a_people.gender));
-            a_command.Parameters.Add(new SQLiteParameter("@param4", a_people.firstName));
-            a_command.Parameters.Add(new SQLiteParameter("@param5", a_people.familyName));
-            a_command.Parameters.Add(new SQLiteParameter("@param6", a_people.email));
-            a_command.Parameters.Add(new SQLiteParameter("@param7", a_people.phone));
-            a_command.Parameters.Add(new SQLiteParameter("@param8", a_people.role));
-            a_command.Parameters.Add(new SQLiteParameter("@param9", a_people.dob));
+            a_command.Parameters.Add(new SQLiteParameter("@param3", a_people.firstName));
+            a_command.Parameters.Add(new SQLiteParameter("@param4", a_people.familyName));
+            a_command.Parameters.Add(new SQLiteParameter("@param5", a_people.gender));
+            a_command.Parameters.Add(new SQLiteParameter("@param6", a_people.dob));
+            a_command.Parameters.Add(new SQLiteParameter("@param7", a_people.email));
+            a_command.Parameters.Add(new SQLiteParameter("@param8", a_people.phone));
+            a_command.Parameters.Add(new SQLiteParameter("@param9", a_people.role));
             a_command.ExecuteNonQuery();
             dataBaseObject.myConnection.Close();
-        } 
-    
+        }
+
 
         protected void sign_up_people(string userName, string passwd, string firstName, string familyName, string gender, string dob, string email, string phoneNum, string role_picked)
         {
-            People a_people = new People(userName, passwd, role_picked);
-            a_people.firstName = firstName;
-            a_people.familyName = familyName;
-            a_people.gender = gender;
-            a_people.dob = dob;
-            a_people.email = email;
-            a_people.phone = phoneNum;
-            string[] a_list = a_people.create_variables_array();
-           
-            for(int i = 0; i<a_list.Length; i++)
+            Boolean duplicateUserName = check_duplicate_username(userName);
+            if (duplicateUserName == false)
             {
-                if (String.IsNullOrEmpty(a_list[i]))
+                MessageBox.Show("Username already exists, try another one please!");
+            }
+            else
+            {
+                People a_people = new People(userName, passwd, role_picked);
+                a_people.firstName = firstName;
+                a_people.familyName = familyName;
+                a_people.gender = gender;
+                a_people.dob = dob;
+                a_people.email = email;
+                a_people.phone = phoneNum;
+                string[] a_list = a_people.create_variables_array();
+
+                for (int i = 0; i < a_list.Length; i++)
                 {
-                    a_list[i] = "NA";
+                    if (String.IsNullOrEmpty(a_list[i]))
+                    {
+                        a_list[i] = "NA";
+                    }
                 }
+
+                insert_into_db(a_people);
             }
 
-            insert_into_db(a_people);
             //for(int i = 0; i<a_list.Length; i++)
             //{
             //    Console.WriteLine(a_list[i]);
@@ -245,11 +275,6 @@ namespace F_D
 
             //Console.WriteLine(f_c);
             sign_up_people(userName, passwd, firstName, familyName, gender, dob, email, phoneNum, role_picked);
-
-
-
-
-
 
             // worked
             //db dataBaseObject = new db();
