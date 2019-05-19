@@ -11,6 +11,9 @@ namespace F_D
 
             Application.Init();
             win = new MainWindow();
+
+            win.SetPosition(WindowPosition.CenterAlways);
+
             win.Show();
             Application.Run();
         }

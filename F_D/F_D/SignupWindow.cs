@@ -362,9 +362,6 @@ namespace F_D
                 }
             }
 
-
-
-
             // worked
             //db dataBaseObject = new db();
             //dataBaseObject.myConnection.Open();
