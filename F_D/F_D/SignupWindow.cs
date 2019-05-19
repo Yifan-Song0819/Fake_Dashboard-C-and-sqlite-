@@ -115,7 +115,7 @@ namespace F_D
 
 
         //check the wrong message and if not pop up the message box
-        protected void check_wrong_message(Boolean empty_user, Boolean same_passwd, Boolean checkEmail, Boolean checkPhone)
+        protected Boolean check_wrong_message(Boolean empty_user, Boolean same_passwd, Boolean checkEmail, Boolean checkPhone)
         {
             if (empty_user == true)
             {
@@ -155,7 +155,12 @@ namespace F_D
 
             if (empty_user == false && same_passwd == true && checkEmail == true && checkPhone == true && duplicateUserName == true)
             {
-                MessageBox.Show("Sign up successful!");
+                //MessageBox.Show("Sign up successful!");
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
@@ -276,13 +281,8 @@ namespace F_D
 
         protected void sign_up_people(string userName, string passwd, string firstName, string familyName, string gender, string dob, string email, string phoneNum, string role_picked)
         {
-            duplicateUserName = check_duplicate_username(userName);
-            if (duplicateUserName == false)
-            {
-                MessageBox.Show("Username already exists, try another one please!");
-            }
-            else
-            {
+
+
                 People a_people = new People(userName, passwd, role_picked);
                 a_people.firstName = firstName;
                 a_people.familyName = familyName;
@@ -303,7 +303,7 @@ namespace F_D
                 }
 
                 insert_into_people(a_people);
-            }
+            
 
             //for(int i = 0; i<a_list.Length; i++)
             //{
@@ -345,8 +345,25 @@ namespace F_D
             Boolean checkPhone = check_phoneNum(phoneNum);
 
 
-            //Console.WriteLine(f_c);
-            sign_up_people(userName, passwd, firstName, familyName, gender, dob, email, phoneNum, role_picked);
+
+            duplicateUserName = check_duplicate_username(userName);
+            if (duplicateUserName == false)
+            {
+                MessageBox.Show("Username already exists, try another one please!");
+            }
+            else
+            {
+                Boolean check_all = check_wrong_message(empty_user, same_passwd, checkEmail, checkPhone);
+                //Console.WriteLine(check_all);
+                if (check_all == true)
+                {
+                    sign_up_people(userName, passwd, firstName, familyName, gender, dob, email, phoneNum, role_picked);
+                    MessageBox.Show("Sign up successful!");
+                }
+            }
+
+
+
 
             // worked
             //db dataBaseObject = new db();
@@ -357,9 +374,7 @@ namespace F_D
             //sqlCommand.ExecuteNonQuery();
             //dataBaseObject.myConnection.Close();
 
-            check_wrong_message(empty_user, same_passwd, checkEmail, checkPhone);
+
         }
-
-
     }
 }
