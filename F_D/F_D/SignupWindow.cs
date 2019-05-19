@@ -11,6 +11,7 @@ namespace F_D
     public partial class SignupWindow : Gtk.Window
     {
         //public static List<string> userList = new List<string>();
+        public static Boolean duplicateUserName;
         public SignupWindow(): base(Gtk.WindowType.Toplevel)
         {
             Build();
@@ -152,7 +153,7 @@ namespace F_D
                 label15.Hide();
             }
 
-            if (empty_user == false && same_passwd == true && checkEmail == true && checkPhone == true)
+            if (empty_user == false && same_passwd == true && checkEmail == true && checkPhone == true && duplicateUserName == true)
             {
                 MessageBox.Show("Sign up successful!");
             }
@@ -165,7 +166,6 @@ namespace F_D
             dataBaseObject.myConnection.Open();
             SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
             a_command.CommandText = "select UPI from People";
-            //a_command.CommandType = CommandText;
             SQLiteDataReader r = a_command.ExecuteReader();
             while (r.Read())
             {
@@ -184,7 +184,7 @@ namespace F_D
         }
 
 
-        protected void insert_into_db(People a_people)
+        protected void insert_into_people(People a_people)
         { 
             db dataBaseObject = new db();
             dataBaseObject.myConnection.Open();
@@ -201,12 +201,82 @@ namespace F_D
             a_command.Parameters.Add(new SQLiteParameter("@param9", a_people.role));
             a_command.ExecuteNonQuery();
             dataBaseObject.myConnection.Close();
+
+            // need to update the role table
+            insert_into_role(a_people);
+        }
+
+
+        protected int find_the_max_id(People a_people)
+        {
+
+            string column_name = a_people.role + "ID";
+            Console.WriteLine(column_name);
+            db dataBaseObject = new db();
+            dataBaseObject.myConnection.Open();
+            SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
+
+            if (a_people.role == "Dean")
+            {
+                a_command.CommandText = "select MAX(DeanID) from Dean";
+            }
+            else if(a_people.role == "Lecturer")
+            {
+                a_command.CommandText = "select MAX(LecturerID) from Lecturer";
+            }
+            else
+            {
+                a_command.CommandText = "select MAX(StudentID) from Student";
+            }
+
+            int res = Int32.Parse(a_command.ExecuteScalar().ToString());
+            dataBaseObject.myConnection.Close();
+            return res;
+
+            //db dataBaseObject = new db();
+            //dataBaseObject.myConnection.Open();
+            //SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
+            //a_command.CommandText = "select MAX(StudentID) from Student";
+            //object val = a_command.ExecuteScalar();
+            //int res = int.Parse(val.ToString());
+            //dataBaseObject.myConnection.Close();
+            //return res;
+        }
+
+
+        protected void insert_into_role(People a_people)
+        {
+            int max_id = find_the_max_id(a_people);
+            Console.WriteLine(max_id);
+
+            db dataBaseObject = new db();
+            dataBaseObject.myConnection.Open();
+            SQLiteCommand a_command = dataBaseObject.myConnection.CreateCommand();
+
+            if (a_people.role == "Dean")
+            {
+                a_command.CommandText = "insert into Dean values(@param1, @param2)";
+            }
+            else if (a_people.role == "Lecturer")
+            {
+                a_command.CommandText = "insert into Lecturer values(@param1, @param2)";
+            }
+            else
+            {
+                a_command.CommandText = "insert into Student values(@param1, @param2)";
+            }
+
+            a_command.Parameters.Add(new SQLiteParameter("@param1", a_people.UPI));
+            a_command.Parameters.Add(new SQLiteParameter("@param2", max_id + 1));
+            a_command.ExecuteNonQuery();
+            dataBaseObject.myConnection.Close();
+
         }
 
 
         protected void sign_up_people(string userName, string passwd, string firstName, string familyName, string gender, string dob, string email, string phoneNum, string role_picked)
         {
-            Boolean duplicateUserName = check_duplicate_username(userName);
+            duplicateUserName = check_duplicate_username(userName);
             if (duplicateUserName == false)
             {
                 MessageBox.Show("Username already exists, try another one please!");
@@ -222,6 +292,8 @@ namespace F_D
                 a_people.phone = phoneNum;
                 string[] a_list = a_people.create_variables_array();
 
+
+                //if user did not input anything, we set the variable to "NA"
                 for (int i = 0; i < a_list.Length; i++)
                 {
                     if (String.IsNullOrEmpty(a_list[i]))
@@ -230,7 +302,7 @@ namespace F_D
                     }
                 }
 
-                insert_into_db(a_people);
+                insert_into_people(a_people);
             }
 
             //for(int i = 0; i<a_list.Length; i++)
