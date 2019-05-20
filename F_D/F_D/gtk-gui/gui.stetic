@@ -171,6 +171,19 @@ Student
             <property name="Y">190</property>
           </packing>
         </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">441</property>
+            <property name="Y">125</property>
+          </packing>
+        </child>
       </widget>
     </child>
   </widget>

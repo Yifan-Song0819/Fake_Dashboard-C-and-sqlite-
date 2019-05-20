@@ -10,6 +10,7 @@ public partial class MainWindow : Gtk.Window
 {
 
     public static SignupWindow signUpWin;
+    public static StudentWindow studentWin;
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -102,20 +103,20 @@ public partial class MainWindow : Gtk.Window
             Console.WriteLine(res);
             if (res == passwd)
             {
-                Dialog dialog = new Dialog();
-                dialog.Title = "Hello!";
-                dialog.Modal = true;
-                dialog.AllowGrow = true;
-                dialog.AllowShrink = true;
-                dialog.Modal = true;
-                dialog.AddActionWidget(new Label("Login successful!"), ResponseType.Ok);
-                dialog.AddActionWidget(new Button(Stock.Ok), ResponseType.Ok);
-                dialog.SetPosition(WindowPosition.Center);
-                //show and get response
-                dialog.ShowAll();
-                ResponseType response = (ResponseType)dialog.Run();
-                dialog.Destroy();
-                dataBaseOb.myConnection.Close();
+                //Dialog dialog = new Dialog();
+                //dialog.Title = "Hello!";
+                //dialog.Modal = true;
+                //dialog.AllowGrow = true;
+                //dialog.AllowShrink = true;
+                //dialog.Modal = true;
+                //dialog.AddActionWidget(new Label("Login successful!"), ResponseType.Ok);
+                //dialog.AddActionWidget(new Button(Stock.Ok), ResponseType.Ok);
+                //dialog.SetPosition(WindowPosition.Center);
+                ////show and get response
+                //dialog.ShowAll();
+                //ResponseType response = (ResponseType)dialog.Run();
+                //dialog.Destroy();
+                //dataBaseOb.myConnection.Close();
 
                 return true;
             }
@@ -159,7 +160,10 @@ public partial class MainWindow : Gtk.Window
             empty_user_pass = check_in_db(role_pick, userName, passWd);
             if (empty_user_pass == true)
             {
-
+                MainClass.win.Hide();
+                studentWin = new StudentWindow();
+                studentWin.SetPosition(WindowPosition.CenterAlways);
+                studentWin.Show();
             }
 
         }

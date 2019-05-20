@@ -8,6 +8,8 @@ namespace F_D
 
 		private global::Gtk.Label label5;
 
+		private global::Gtk.Button button1;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -28,6 +30,16 @@ namespace F_D
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.label5]));
 			w1.X = 260;
 			w1.Y = 190;
+			// Container child fixed2.Gtk.Fixed+FixedChild
+			this.button1 = new global::Gtk.Button();
+			this.button1.CanFocus = true;
+			this.button1.Name = "button1";
+			this.button1.UseUnderline = true;
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed2.Add(this.button1);
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.button1]));
+			w2.X = 441;
+			w2.Y = 125;
 			this.Add(this.fixed2);
 			if ((this.Child != null))
 			{
