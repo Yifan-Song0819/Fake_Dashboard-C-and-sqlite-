@@ -582,30 +582,30 @@ Secret</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button11">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
-            <property name="UseUnderline">True</property>
-          </widget>
-          <packing>
-            <property name="X">160</property>
-            <property name="Y">400</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Button" id="button12">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Type">TextOnly</property>
             <property name="Label" translatable="yes">GtkButton</property>
             <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="Close_button" />
           </widget>
           <packing>
-            <property name="X">400</property>
-            <property name="Y">400</property>
+            <property name="X">430</property>
+            <property name="Y">390</property>
           </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
         </child>
         <child>
           <placeholder />
@@ -629,8 +629,22 @@ Secret</property>
             </child>
           </widget>
           <packing>
+            <property name="X">54</property>
+            <property name="Y">123</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button11">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="Show_gpa" />
+          </widget>
+          <packing>
             <property name="X">130</property>
-            <property name="Y">124</property>
+            <property name="Y">390</property>
           </packing>
         </child>
       </widget>

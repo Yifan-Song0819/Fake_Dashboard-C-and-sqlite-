@@ -12,13 +12,13 @@ namespace F_D
 
 		private global::Gtk.Label label11;
 
-		private global::Gtk.Button button11;
-
 		private global::Gtk.Button button12;
 
 		private global::Gtk.ScrolledWindow GtkScrolledWindow;
 
 		private global::Gtk.TreeView treeview1;
+
+		private global::Gtk.Button button11;
 
 		protected virtual void Build()
 		{
@@ -56,25 +56,15 @@ namespace F_D
 			w3.X = 172;
 			w3.Y = 333;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.button11 = new global::Gtk.Button();
-			this.button11.CanFocus = true;
-			this.button11.Name = "button11";
-			this.button11.UseUnderline = true;
-			this.button11.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
-			this.fixed3.Add(this.button11);
-			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button11]));
-			w4.X = 160;
-			w4.Y = 400;
-			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.button12 = new global::Gtk.Button();
 			this.button12.CanFocus = true;
 			this.button12.Name = "button12";
 			this.button12.UseUnderline = true;
 			this.button12.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
 			this.fixed3.Add(this.button12);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button12]));
-			w5.X = 400;
-			w5.Y = 400;
+			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button12]));
+			w4.X = 430;
+			w4.Y = 390;
 			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
 			this.GtkScrolledWindow.Name = "GtkScrolledWindow";
@@ -85,9 +75,19 @@ namespace F_D
 			this.treeview1.Name = "treeview1";
 			this.GtkScrolledWindow.Add(this.treeview1);
 			this.fixed3.Add(this.GtkScrolledWindow);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.GtkScrolledWindow]));
+			global::Gtk.Fixed.FixedChild w6 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.GtkScrolledWindow]));
+			w6.X = 54;
+			w6.Y = 123;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.button11 = new global::Gtk.Button();
+			this.button11.CanFocus = true;
+			this.button11.Name = "button11";
+			this.button11.UseUnderline = true;
+			this.button11.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed3.Add(this.button11);
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button11]));
 			w7.X = 130;
-			w7.Y = 124;
+			w7.Y = 390;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
@@ -96,6 +96,8 @@ namespace F_D
 			this.DefaultWidth = 660;
 			this.DefaultHeight = 524;
 			this.Show();
+			this.button12.Clicked += new global::System.EventHandler(this.Close_button);
+			this.button11.Clicked += new global::System.EventHandler(this.Show_gpa);
 		}
 	}
 }

@@ -145,7 +145,7 @@ public partial class MainWindow : Gtk.Window
             empty_user_pass = check_in_db(role_pick, userName, passWd);
             if (empty_user_pass == true)
             {
-                MainClass.win.Hide();
+                MainClass.win.Destroy();
                 studentWin = new StuWindow(userName);
                 studentWin.SetPosition(WindowPosition.CenterAlways);
                 studentWin.Show();
