@@ -5,8 +5,8 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/F_D.exe" internal="true" />
     <widget-library name="../../../../../../../../Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.GtkCore/libstetic.dll" />
+    <widget-library name="../bin/Debug/F_D.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="670 448">
     <property name="MemberName" />
@@ -147,41 +147,6 @@ Student
           <packing>
             <property name="X">287</property>
             <property name="Y">377</property>
-          </packing>
-        </child>
-      </widget>
-    </child>
-  </widget>
-  <widget class="Gtk.Window" id="F_D.StudentWindow" design-size="603 429">
-    <property name="MemberName" />
-    <property name="Title" translatable="yes">StudentWindow</property>
-    <property name="WindowPosition">CenterOnParent</property>
-    <property name="BorderWidth">6</property>
-    <child>
-      <widget class="Gtk.Fixed" id="fixed2">
-        <property name="MemberName" />
-        <property name="HasWindow">False</property>
-        <child>
-          <widget class="Gtk.Label" id="label5">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label5</property>
-          </widget>
-          <packing>
-            <property name="X">260</property>
-            <property name="Y">190</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="button1">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
-            <property name="UseUnderline">True</property>
-          </widget>
-          <packing>
-            <property name="X">441</property>
-            <property name="Y">125</property>
           </packing>
         </child>
       </widget>
@@ -573,6 +538,99 @@ Secret</property>
           <packing>
             <property name="X">720</property>
             <property name="Y">350</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="F_D.StuWindow" design-size="660 524">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">StuWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed3">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label9">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">label9</property>
+          </widget>
+          <packing>
+            <property name="X">130</property>
+            <property name="Y">60</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label10">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">label10</property>
+          </widget>
+          <packing>
+            <property name="X">230</property>
+            <property name="Y">60</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label11">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">label11</property>
+          </widget>
+          <packing>
+            <property name="X">172</property>
+            <property name="Y">333</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button11">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">160</property>
+            <property name="Y">400</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button12">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">400</property>
+            <property name="Y">400</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+            <property name="MemberName" />
+            <property name="ShadowType">In</property>
+            <child>
+              <widget class="Gtk.TreeView" id="treeview1">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="ShowScrollbars">True</property>
+              </widget>
+            </child>
+          </widget>
+          <packing>
+            <property name="X">130</property>
+            <property name="Y">124</property>
           </packing>
         </child>
       </widget>
