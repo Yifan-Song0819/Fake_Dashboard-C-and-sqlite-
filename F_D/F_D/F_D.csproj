@@ -93,6 +93,8 @@
     <Compile Include="People.cs" />
     <Compile Include="StuWindow.cs" />
     <Compile Include="gtk-gui\F_D.StuWindow.cs" />
+    <Compile Include="ChangeStuWindow.cs" />
+    <Compile Include="gtk-gui\F_D.ChangeStuWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libsqlite3.dylib" />

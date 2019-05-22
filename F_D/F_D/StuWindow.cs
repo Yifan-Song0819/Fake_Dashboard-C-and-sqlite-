@@ -11,6 +11,7 @@ namespace F_D
         public string user;
         public ListStore storeModel;
         public List<string> gradeLevelList;
+        public static ChangeStuWindow ChangeSwin;
         public StuWindow(string user) :
                 base(Gtk.WindowType.Toplevel)
         {
@@ -37,6 +38,8 @@ namespace F_D
             }
             dataBaseOb.myConnection.Close();
             return res;
+
+
         }
 
 
@@ -85,6 +88,7 @@ namespace F_D
             label10.Text = user;
             button11.Label = "check gpa";
             button12.Label = "Close";
+            button1.Label = "Change My Informations";
             label11.Hide();
         }
 
@@ -177,8 +181,8 @@ namespace F_D
                 gpa_total += gpa_point[a_index];
             }
 
-            Console.WriteLine("=======");
-            Console.WriteLine(gradeLevelList.Count);
+            //Console.WriteLine("=======");
+            //Console.WriteLine(gradeLevelList.Count);
             if (gradeLevelList.Count == 0)
             {
                 label11.Text = "You have not enrolled any papers!";
@@ -194,6 +198,11 @@ namespace F_D
 
         protected void change_profiles(object sender, EventArgs e)
         {
+            MainWindow.studentWin.Hide();
+            ChangeSwin = new ChangeStuWindow(user);
+            ChangeSwin.Title = "Change Student Infos";
+            ChangeSwin.SetPosition(WindowPosition.CenterAlways);
+            ChangeSwin.Show();
 
         }
     }

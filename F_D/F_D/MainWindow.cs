@@ -121,7 +121,7 @@ public partial class MainWindow : Gtk.Window
                 ResponseType response = (ResponseType)dialog.Run();
                 dialog.Destroy();
                 dataBaseOb.myConnection.Close();
-                dataBaseOb.myConnection.Close();
+
                 return false;
             }
 

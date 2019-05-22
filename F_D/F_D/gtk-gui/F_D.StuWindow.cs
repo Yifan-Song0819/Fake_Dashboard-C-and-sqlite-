@@ -20,6 +20,8 @@ namespace F_D
 
 		private global::Gtk.Button button11;
 
+		private global::Gtk.Button button1;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -63,7 +65,7 @@ namespace F_D
 			this.button12.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
 			this.fixed3.Add(this.button12);
 			global::Gtk.Fixed.FixedChild w4 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button12]));
-			w4.X = 430;
+			w4.X = 490;
 			w4.Y = 390;
 			// Container child fixed3.Gtk.Fixed+FixedChild
 			this.GtkScrolledWindow = new global::Gtk.ScrolledWindow();
@@ -88,6 +90,16 @@ namespace F_D
 			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button11]));
 			w7.X = 130;
 			w7.Y = 390;
+			// Container child fixed3.Gtk.Fixed+FixedChild
+			this.button1 = new global::Gtk.Button();
+			this.button1.CanFocus = true;
+			this.button1.Name = "button1";
+			this.button1.UseUnderline = true;
+			this.button1.Label = global::Mono.Unix.Catalog.GetString("GtkButton");
+			this.fixed3.Add(this.button1);
+			global::Gtk.Fixed.FixedChild w8 = ((global::Gtk.Fixed.FixedChild)(this.fixed3[this.button1]));
+			w8.X = 290;
+			w8.Y = 390;
 			this.Add(this.fixed3);
 			if ((this.Child != null))
 			{
@@ -98,6 +110,7 @@ namespace F_D
 			this.Show();
 			this.button12.Clicked += new global::System.EventHandler(this.Close_button);
 			this.button11.Clicked += new global::System.EventHandler(this.Show_gpa);
+			this.button1.Clicked += new global::System.EventHandler(this.change_profiles);
 		}
 	}
 }

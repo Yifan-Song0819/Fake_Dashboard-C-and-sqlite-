@@ -13,11 +13,20 @@ namespace F_D
         public string email { get; set; }
         public string phone { get; set; }
         public string role { get; set; }
+
+
+        //Constructor Overloading
         public People(string UPI, string passwd, string role)
         {
             this.UPI = UPI;
             this.passwd = passwd;
             this.role = role;
+        }
+
+        public People(string UPI, string passwd)
+        {
+            this.UPI = UPI;
+            this.passwd = passwd;
         }
 
 

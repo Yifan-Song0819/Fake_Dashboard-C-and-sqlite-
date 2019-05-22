@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Text.RegularExpressions;
+using System.Text.RegularExpressions; 
 using System.Windows.Forms;
 using Gtk;
 using System.Data.SQLite;
@@ -370,8 +370,6 @@ namespace F_D
             //sqlCommand.Connection = dataBaseObject.myConnection;
             //sqlCommand.ExecuteNonQuery();
             //dataBaseObject.myConnection.Close();
-
-
         }
     }
 }
