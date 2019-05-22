@@ -190,8 +190,10 @@ namespace F_D
             }
             else
             {
-                double gpa = (double)gpa_total / gradeLevelList.Count;
-                label11.Text = "Your gpa is " + gpa.ToString();
+                decimal gpa = (decimal)gpa_total / gradeLevelList.Count;
+
+                decimal a_gpa = Math.Truncate(gpa * 100m) / 100m;
+                label11.Text = "Your gpa is " + a_gpa.ToString();
                 label11.Show();
             }
         }

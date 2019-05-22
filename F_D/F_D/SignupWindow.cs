@@ -349,7 +349,20 @@ namespace F_D
             duplicateUserName = check_duplicate_username(userName);
             if (duplicateUserName == false)
             {
-                MessageBox.Show("Username already exists, try another one please!");
+                //MessageBox.Show("Username already exists, try another one please!");
+                Dialog dialog = new Dialog();
+                dialog.Title = "Warning:";
+                dialog.Modal = true;
+                dialog.AllowGrow = true;
+                dialog.AllowShrink = true;
+                dialog.Modal = true;
+                dialog.AddActionWidget(new Gtk.Label("Username already exists, try another one please!"), ResponseType.Ok);
+                dialog.AddActionWidget(new Gtk.Button(Stock.Ok), ResponseType.Ok);
+                dialog.SetPosition(WindowPosition.Center);
+                //show and get response
+                dialog.ShowAll();
+                ResponseType response = (ResponseType)dialog.Run();
+                dialog.Destroy();
             }
             else
             {
@@ -358,7 +371,20 @@ namespace F_D
                 if (check_all == true)
                 {
                     sign_up_people(userName, passwd, firstName, familyName, gender, dob, email, phoneNum, role_picked);
-                    MessageBox.Show("Sign up successful!");
+                    //MessageBox.Show("Sign up successful!");
+                    Dialog dialog = new Dialog();
+                    dialog.Title = "Warning:";
+                    dialog.Modal = true;
+                    dialog.AllowGrow = true;
+                    dialog.AllowShrink = true;
+                    dialog.Modal = true;
+                    dialog.AddActionWidget(new Gtk.Label("Sign up successful!"), ResponseType.Ok);
+                    dialog.AddActionWidget(new Gtk.Button(Stock.Ok), ResponseType.Ok);
+                    dialog.SetPosition(WindowPosition.Center);
+                    //show and get response
+                    dialog.ShowAll();
+                    ResponseType response = (ResponseType)dialog.Run();
+                    dialog.Destroy();
                 }
             }
 
