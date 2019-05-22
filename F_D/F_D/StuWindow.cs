@@ -85,6 +85,7 @@ namespace F_D
             label10.Text = user;
             button11.Label = "check gpa";
             button12.Label = "Close";
+            label11.Hide();
         }
 
         protected void HandleNodeView()
@@ -176,17 +177,23 @@ namespace F_D
                 gpa_total += gpa_point[a_index];
             }
 
+            Console.WriteLine("=======");
+            Console.WriteLine(gradeLevelList.Count);
             if (gradeLevelList.Count == 0)
             {
-                //label blabla
+                label11.Text = "You have not enrolled any papers!";
+                label11.Show();
             }
             else
             {
                 double gpa = (double)gpa_total / gradeLevelList.Count;
+                label11.Text = "Your gpa is " + gpa.ToString();
+                label11.Show();
             }
+        }
 
-
-            Console.WriteLine(gpa);
+        protected void change_profiles(object sender, EventArgs e)
+        {
 
         }
     }

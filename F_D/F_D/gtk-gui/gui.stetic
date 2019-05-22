@@ -195,7 +195,6 @@ Student
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Label" translatable="yes">radiobutton1</property>
-            <property name="Active">True</property>
             <property name="DrawIndicator">True</property>
             <property name="HasLabel">True</property>
             <property name="UseUnderline">True</property>
@@ -644,6 +643,20 @@ Secret</property>
           </widget>
           <packing>
             <property name="X">130</property>
+            <property name="Y">390</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button1">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">GtkButton</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="change_profiles" />
+          </widget>
+          <packing>
+            <property name="X">290</property>
             <property name="Y">390</property>
           </packing>
         </child>
