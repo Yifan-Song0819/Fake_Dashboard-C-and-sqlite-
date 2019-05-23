@@ -30,28 +30,46 @@ namespace Fake_Dashboard
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            var dbconnection = new SQLiteConnection("data source = Fake_Dashboard.db");
-            dbconnection.Open();
-            int upitemp = 123456;
-            string passwordtemp = "123456";
-            string sql = "SELECT UPI,Password FROM People";
-            SQLiteCommand command = new SQLiteCommand(sql,dbconnection);
-            SQLiteDataReader reader = command.ExecuteReader();
-            bool a = false;
-            while (reader.Read())
+            //var dbconnection = new SQLiteConnection("data source = Fake_Dashboard.db");
+            //dbconnection.Open();
+            //int upitemp = 123456;
+            //string passwordtemp = "123456";
+            //string sql = "SELECT UPI,Password FROM People";
+            //SQLiteCommand command = new SQLiteCommand(sql,dbconnection);
+            //SQLiteDataReader reader = command.ExecuteReader();
+            //bool a = false;
+            //while (reader.Read())
+            //{
+            //    if(UPITextBox.Text == reader["UPI"].ToString() & PasswordTextBox.Text == reader["Password"].ToString())
+            //    {
+            //        a = true;
+            //    }
+            //}
+            //if ( a == false)
+            //{
+            //    this.LoginDetailLabel.Visible = true;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Welcome");
+            //}
+            string upi = UPITextBox.Text;
+            string password = PasswordTextBox.Text;
+            int LoginDetail = DatabaseQuery.Login(upi,password);
+            switch (LoginDetail)
             {
-                if(UPITextBox.Text == reader["UPI"].ToString() & PasswordTextBox.Text == reader["Password"].ToString())
-                {
-                    a = true;
-                }
-            }
-            if ( a == false)
-            {
-                this.LoginDetailLabel.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("Welcome");
+                case 0:
+                    LoginDetailLabel.Visible = true;
+                    break;
+                case 1:
+                    MessageBox.Show("Welcome Student");
+                    break;
+                case 2:
+                    MessageBox.Show("Welcome Lecturer");
+                    break;
+                case 3:
+                    MessageBox.Show("Welcome Dean");
+                    break;
             }
         }
     }

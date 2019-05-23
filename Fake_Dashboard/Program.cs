@@ -15,10 +15,12 @@ namespace Fake_Dashboard
         [STAThread]
         static void Main()
         {
+            DatabaseQuery.ConnectingDatabase();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DashBorad());
             
+
         }
     }
 }
