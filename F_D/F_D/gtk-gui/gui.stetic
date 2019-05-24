@@ -909,4 +909,15 @@ Secret</property>
       </widget>
     </child>
   </widget>
+  <widget class="Gtk.Window" id="F_D.LecturerWindow" design-size="800 523">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">LecturerWindow</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed1">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+      </widget>
+    </child>
+  </widget>
 </stetic-interface>

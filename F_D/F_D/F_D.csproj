@@ -95,6 +95,8 @@
     <Compile Include="gtk-gui\F_D.StuWindow.cs" />
     <Compile Include="ChangeStuWindow.cs" />
     <Compile Include="gtk-gui\F_D.ChangeStuWindow.cs" />
+    <Compile Include="LecturerWindow.cs" />
+    <Compile Include="gtk-gui\F_D.LecturerWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libsqlite3.dylib" />

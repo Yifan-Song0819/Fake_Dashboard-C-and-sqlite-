@@ -11,6 +11,7 @@ public partial class MainWindow : Gtk.Window
 
     public static SignupWindow signUpWin;
     public static StuWindow studentWin;
+    public static LecturerWindow lecturerWin;
     public MainWindow() : base(Gtk.WindowType.Toplevel)
     {
         Build();
@@ -143,12 +144,21 @@ public partial class MainWindow : Gtk.Window
         if (empty_user_pass == true)
         {
             empty_user_pass = check_in_db(role_pick, userName, passWd);
-            if (empty_user_pass == true)
+            if (empty_user_pass == true && role_pick == "Student")
             {
                 MainClass.win.Destroy();
                 studentWin = new StuWindow(userName);
                 studentWin.SetPosition(WindowPosition.CenterAlways);
                 studentWin.Show();
+            }
+            else if (empty_user_pass == true && role_pick == "Lecturer")
+            {
+                Console.WriteLine("lecturer!!!!!");
+                MainClass.win.Destroy();
+                lecturerWin = new LecturerWindow(userName);
+                lecturerWin.Title = "Lecturer DashBoard";
+                lecturerWin.SetPosition(WindowPosition.CenterAlways);
+                lecturerWin.Show();
             }
 
         }
