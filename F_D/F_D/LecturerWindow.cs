@@ -17,44 +17,26 @@ namespace F_D
 
         protected void test()
         {
-            // !!!
-            using (Button abtn = new Button("lol"))
+            int x = 100;
+
+            for (int i = 1; i < 4; i++)
             {
-                //abtn.SetSizeRequest(100, 100);
-                //abtn.SetUposition(100, 100);
-                //abtn.Clicked += new EventHandler(abtn_Clicked);
-                //EventArgs ee = new EventArgs();
-                //abtn_Clicked(abtn, ee);
-                //this.fixed1.Add(abtn);
-                //abtn.Show(); 
-
-
+                Button abtn = new Button("lol");
                 abtn.SetSizeRequest(100, 100);
-                abtn.SetUposition(100, 100);
-                abtn.Clicked += delegate
-                {
-                    Console.WriteLine("111111");
-                };
+                abtn.SetUposition(x, 100);
+                abtn.Clicked += new EventHandler(DynamicButton_Click);
                 this.fixed1.Add(abtn);
-                abtn.Show(); 
+                abtn.Show();
+                x = x + 200;
             }
+
+
         }
 
-        //protected void abtn_Clicked(object sender, EventArgs e)
-        //{
-        //    Dialog dialog = new Dialog();
-        //    dialog.Title = "Warning:";
-        //    dialog.Modal = true;
-        //    dialog.AllowGrow = true;
-        //    dialog.AllowShrink = true;
-        //    dialog.Modal = true;
-        //    dialog.AddActionWidget(new Label("1111111"), ResponseType.Ok);
-        //    dialog.AddActionWidget(new Button(Stock.Ok), ResponseType.Ok);
-        //    dialog.SetPosition(WindowPosition.Center);
-        //    //show and get response
-        //    dialog.ShowAll();
-        //    ResponseType response = (ResponseType)dialog.Run();
-        //    dialog.Destroy();
-        //}
+        protected void DynamicButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("new one!!!!");
+        }
+
     }
 }
