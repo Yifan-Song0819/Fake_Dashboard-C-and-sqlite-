@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using System.Windows.Forms;
+using System.Data;
 
 namespace Fake_Dashboard
 {
@@ -38,6 +40,17 @@ namespace Fake_Dashboard
                 }
             }
             return 0;
+        }
+
+        public static void showDataTable(DataGridView dataview,string courseNum)
+        {
+            string sqlQuery = "SELECT p.UPI,S.StudentID,p.FirstName,p.SurName,sc.CourseMark FROM People p INNER JOIN Student s ON p.UPI = s.UPI INNER JOIN StudentCourse sc ON s.StudentID = sc.StudentID INNER JOIN Course c ON sc.CourseID = c.CourseID WHERE c.courseNum = '" + courseNum + "'";
+            SQLiteDataAdapter mAdapter = new SQLiteDataAdapter(sqlQuery, dbconnection);
+            //MessageBox.Show(mAdapter);
+            DataTable dt = new DataTable();
+            mAdapter.Fill(dt);
+            dataview.DataSource = dt;
+
         }
     }
 }

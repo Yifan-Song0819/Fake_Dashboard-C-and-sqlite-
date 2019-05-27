@@ -18,3 +18,4 @@ D:\vs c# program\repos\Fake_Dashboard\bin\Debug\EntityFramework.SqlServer.xml
 D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.xml
 D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.dll.config
 D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.csproj.CopyComplete
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.Dean.resources
