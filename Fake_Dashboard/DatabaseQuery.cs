@@ -52,5 +52,19 @@ namespace Fake_Dashboard
             dataview.DataSource = dt;
 
         }
+
+        public static void setCourseNumComboBox(ComboBox cb)
+        {
+            string sqlQuery = "SELECT CourseNum From Course;";
+            SQLiteCommand command = new SQLiteCommand(sqlQuery, dbconnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            List<string> CourseNumList = new List<string>();
+            while (reader.Read())
+            {
+                CourseNumList.Add(reader["CourseNum"].ToString());
+            }
+            cb.Items.AddRange(CourseNumList.ToArray());
+            cb.Text = cb.Items[0].ToString();
+        }
     }
 }
