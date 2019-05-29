@@ -13,11 +13,16 @@ namespace F_D
         {
             this.user = user;
             this.Build();
-
+            updateNames();
             Show_papers();
             //test();
         }
 
+        protected void updateNames()
+        {
+            label1.Text = "Welcome!";
+            label2.Text = user;
+        }
         protected int get_lecturer_id(string user)
         {
             db dataBaseOb = new db();
@@ -70,6 +75,55 @@ namespace F_D
             return res;
         }
 
+        protected string get_paper_detail(int courseId)
+        {
+            string res = "";
+            db dataBaseOb = new db();
+            dataBaseOb.myConnection.Open();
+            SQLiteCommand b_command = new SQLiteCommand("select CourseNum, CourseDes from Course where CourseID = @param2", dataBaseOb.myConnection);
+            b_command.Parameters.Add(new SQLiteParameter("@param2", courseId));
+            SQLiteDataReader reader_1 = b_command.ExecuteReader();
+
+            while (reader_1.Read())
+            {
+                res = Convert.ToString(reader_1["CourseNum"]) + " " + Convert.ToString(reader_1["CourseDes"]);
+            }
+            dataBaseOb.myConnection.Close();
+
+            return res;
+        }
+
+        protected void show_buttons(List<int> papersId)
+        {
+            int x = 50;
+            int y = 80;
+            for (int i = 0; i < papersId.Count; i++)
+            {
+                string btnName = get_paper_detail(papersId[i]);
+                //Console.WriteLine(btnName);
+                Button abtn = new Button(btnName);
+                abtn.SetSizeRequest(250, 100);
+                abtn.SetUposition(x, y);
+                abtn.Clicked += new EventHandler(paper_button);
+                this.fixed1.Add(abtn);
+                abtn.Show();
+                if (x > 549)
+                {
+                    x = 50;
+                    y = 190;
+                }
+                else
+                {
+                    x = x + 255;
+                }
+
+            }
+        }
+
+        protected void paper_button(object sender, EventArgs e)
+        {
+
+        }
         // show the papers what the lecturer in charge
         protected void Show_papers()
         {
@@ -77,11 +131,11 @@ namespace F_D
             //Console.WriteLine(lecturerID);
             List<int> papersID = new List<int>();
             papersID = get_papers_id(lecturerID);
-            for(int i = 0; i < papersID.Count; i++)
-            {
-                Console.WriteLine(papersID[i]);
-            }
-
+            //for(int i = 0; i < papersID.Count; i++)
+            //{
+            //    Console.WriteLine(papersID[i]);
+            //}
+            show_buttons(papersID);
         }
 
 

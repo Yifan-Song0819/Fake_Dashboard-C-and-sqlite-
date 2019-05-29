@@ -63,16 +63,16 @@ namespace F_D
 			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString("label1");
 			this.fixed1.Add(this.label1);
 			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label1]));
-			w1.X = 194;
-			w1.Y = 46;
+			w1.X = 50;
+			w1.Y = 30;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label2 = new global::Gtk.Label();
 			this.label2.Name = "label2";
 			this.label2.LabelProp = global::Mono.Unix.Catalog.GetString("label2");
 			this.fixed1.Add(this.label2);
 			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.label2]));
-			w2.X = 455;
-			w2.Y = 44;
+			w2.X = 120;
+			w2.Y = 30;
 			// Container child fixed1.Gtk.Fixed+FixedChild
 			this.label3 = new global::Gtk.Label();
 			this.label3.Name = "label3";

@@ -923,8 +923,8 @@ Secret</property>
             <property name="LabelProp" translatable="yes">label1</property>
           </widget>
           <packing>
-            <property name="X">194</property>
-            <property name="Y">46</property>
+            <property name="X">50</property>
+            <property name="Y">30</property>
           </packing>
         </child>
         <child>
@@ -933,8 +933,8 @@ Secret</property>
             <property name="LabelProp" translatable="yes">label2</property>
           </widget>
           <packing>
-            <property name="X">455</property>
-            <property name="Y">44</property>
+            <property name="X">120</property>
+            <property name="Y">30</property>
           </packing>
         </child>
         <child>
