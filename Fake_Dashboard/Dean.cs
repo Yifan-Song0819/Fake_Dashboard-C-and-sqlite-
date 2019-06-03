@@ -15,7 +15,7 @@ namespace Fake_Dashboard
         public Dean()
         {
             InitializeComponent();
-            DatabaseQuery.setCourseNumComboBox(CourseNumComboBox);
+            DatabaseQuery.SetCourseNumComboBox(CourseNumComboBox);
             //DatabaseQuery.showDataTable(this.DataTable1, "CS101");
         }
 
@@ -27,8 +27,9 @@ namespace Fake_Dashboard
         private void CourseNumComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string courseNum = CourseNumComboBox.Items[CourseNumComboBox.SelectedIndex].ToString();
-            MessageBox.Show(CourseNumComboBox.Items[CourseNumComboBox.SelectedIndex].ToString());
-            DatabaseQuery.showDataTable(this.DataTable1, courseNum);
+            //MessageBox.Show(CourseNumComboBox.Items[CourseNumComboBox.SelectedIndex].ToString());
+            DatabaseQuery.ShowStudentDataTable(this.StudentDataTable, courseNum);
+            DatabaseQuery.ShowLecturerDataTable(this.LecturerDataTable, courseNum);
         }
     }
 }

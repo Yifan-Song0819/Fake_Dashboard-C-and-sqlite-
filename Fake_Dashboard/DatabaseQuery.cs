@@ -42,7 +42,7 @@ namespace Fake_Dashboard
             return 0;
         }
 
-        public static void showDataTable(DataGridView dataview,string courseNum)
+        public static void ShowStudentDataTable(DataGridView dataview,string courseNum)
         {
             string sqlQuery = "SELECT p.UPI,S.StudentID,p.FirstName,p.SurName,sc.CourseMark FROM People p INNER JOIN Student s ON p.UPI = s.UPI INNER JOIN StudentCourse sc ON s.StudentID = sc.StudentID INNER JOIN Course c ON sc.CourseID = c.CourseID WHERE c.courseNum = '" + courseNum + "'";
             SQLiteDataAdapter mAdapter = new SQLiteDataAdapter(sqlQuery, dbconnection);
@@ -53,7 +53,21 @@ namespace Fake_Dashboard
 
         }
 
-        public static void setCourseNumComboBox(ComboBox cb)
+        public static void ShowLecturerDataTable(DataGridView dataview, string courseNum)
+        {
+            string sqlQuery = "SELECT p.UPI,p.FirstName,p.SurName FROM People p INNER JOIN Lecturer l ON p.UPI = l.UPI INNER JOIN LecturerCourse lc ON l.LecturerID = lc.LecturerID INNER JOIN Course c ON lc.CourseID = c.CourseID WHERE c.courseNum = '" + courseNum + "'";
+            SQLiteDataAdapter mAdapter = new SQLiteDataAdapter(sqlQuery, dbconnection);
+            DataTable dt = new DataTable();
+            mAdapter.Fill(dt);
+            dataview.DataSource = dt;
+        }
+
+        public static void AddStudentToCourse(string upi, string courseNum)
+        {
+
+        }
+
+        public static void SetCourseNumComboBox(ComboBox cb)
         {
             string sqlQuery = "SELECT CourseNum From Course;";
             SQLiteCommand command = new SQLiteCommand(sqlQuery, dbconnection);

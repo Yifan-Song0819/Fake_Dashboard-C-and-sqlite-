@@ -28,22 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DataTable1 = new System.Windows.Forms.DataGridView();
+            this.StudentDataTable = new System.Windows.Forms.DataGridView();
             this.CourseNumComboBox = new System.Windows.Forms.ComboBox();
             this.AddNewStudentButton = new System.Windows.Forms.Button();
             this.ShowStatsButton = new System.Windows.Forms.Button();
             this.ChangeDataButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1)).BeginInit();
+            this.LecturerDataTable = new System.Windows.Forms.DataGridView();
+            this.StudentsLabel = new System.Windows.Forms.Label();
+            this.LecturerLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentDataTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LecturerDataTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // DataTable1
+            // StudentDataTable
             // 
-            this.DataTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataTable1.Location = new System.Drawing.Point(21, 12);
-            this.DataTable1.Name = "DataTable1";
-            this.DataTable1.RowTemplate.Height = 23;
-            this.DataTable1.Size = new System.Drawing.Size(746, 423);
-            this.DataTable1.TabIndex = 0;
+            this.StudentDataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StudentDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StudentDataTable.Location = new System.Drawing.Point(21, 36);
+            this.StudentDataTable.Name = "StudentDataTable";
+            this.StudentDataTable.RowTemplate.Height = 23;
+            this.StudentDataTable.Size = new System.Drawing.Size(746, 399);
+            this.StudentDataTable.TabIndex = 0;
             // 
             // CourseNumComboBox
             // 
@@ -82,31 +87,67 @@
             this.ChangeDataButton.Text = "Change Data Of Students";
             this.ChangeDataButton.UseVisualStyleBackColor = true;
             // 
+            // LecturerDataTable
+            // 
+            this.LecturerDataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LecturerDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LecturerDataTable.Location = new System.Drawing.Point(21, 477);
+            this.LecturerDataTable.Name = "LecturerDataTable";
+            this.LecturerDataTable.RowTemplate.Height = 23;
+            this.LecturerDataTable.Size = new System.Drawing.Size(746, 137);
+            this.LecturerDataTable.TabIndex = 5;
+            // 
+            // StudentsLabel
+            // 
+            this.StudentsLabel.AutoSize = true;
+            this.StudentsLabel.Location = new System.Drawing.Point(21, 12);
+            this.StudentsLabel.Name = "StudentsLabel";
+            this.StudentsLabel.Size = new System.Drawing.Size(53, 12);
+            this.StudentsLabel.TabIndex = 6;
+            this.StudentsLabel.Text = "Students";
+            // 
+            // LecturerLabel
+            // 
+            this.LecturerLabel.AutoSize = true;
+            this.LecturerLabel.Location = new System.Drawing.Point(21, 451);
+            this.LecturerLabel.Name = "LecturerLabel";
+            this.LecturerLabel.Size = new System.Drawing.Size(53, 12);
+            this.LecturerLabel.TabIndex = 7;
+            this.LecturerLabel.Text = "Lecturer";
+            // 
             // Dean
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.LecturerLabel);
+            this.Controls.Add(this.StudentsLabel);
+            this.Controls.Add(this.LecturerDataTable);
             this.Controls.Add(this.ChangeDataButton);
             this.Controls.Add(this.ShowStatsButton);
             this.Controls.Add(this.AddNewStudentButton);
             this.Controls.Add(this.CourseNumComboBox);
-            this.Controls.Add(this.DataTable1);
+            this.Controls.Add(this.StudentDataTable);
             this.Name = "Dean";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dean";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dean_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.DataTable1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StudentDataTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LecturerDataTable)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DataTable1;
+        private System.Windows.Forms.DataGridView StudentDataTable;
         private System.Windows.Forms.ComboBox CourseNumComboBox;
         private System.Windows.Forms.Button AddNewStudentButton;
         private System.Windows.Forms.Button ShowStatsButton;
         private System.Windows.Forms.Button ChangeDataButton;
+        private System.Windows.Forms.DataGridView LecturerDataTable;
+        private System.Windows.Forms.Label StudentsLabel;
+        private System.Windows.Forms.Label LecturerLabel;
     }
 }
