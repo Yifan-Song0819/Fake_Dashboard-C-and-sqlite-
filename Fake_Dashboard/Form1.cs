@@ -30,36 +30,60 @@ namespace Fake_Dashboard
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            var dbconnection = new SQLiteConnection("data source = Fake_Dashboard.db");
-            dbconnection.Open();
-            //string tempupi = "11111111";
-            //string temppassword = "12345678";
-            //if(tempupi == this.UPITextBox.Text.ToString() | temppassword == this.PasswordTextBox.Text)
+            //var dbconnection = new SQLiteConnection("data source = Fake_Dashboard.db");
+            //dbconnection.Open();
+            //int upitemp = 123456;
+            //string passwordtemp = "123456";
+            //string sql = "SELECT UPI,Password FROM People";
+            //SQLiteCommand command = new SQLiteCommand(sql,dbconnection);
+            //SQLiteDataReader reader = command.ExecuteReader();
+            //bool a = false;
+            //while (reader.Read())
             //{
-            //    MessageBox.Show("w");
+            //    if(UPITextBox.Text == reader["UPI"].ToString() & PasswordTextBox.Text == reader["Password"].ToString())
+            //    {
+            //        a = true;
+            //    }
             //}
-            //else
+            //if ( a == false)
             //{
             //    this.LoginDetailLabel.Visible = true;
             //}
-            string sql = "SELECT UPI,Password FROM People";
-            SQLiteCommand command = new SQLiteCommand(sql,dbconnection);
-            SQLiteDataReader reader = command.ExecuteReader();
-            bool a = false;
-            while (reader.Read())
+            //else
+            //{
+            //    MessageBox.Show("Welcome");
+            //}
+            string upi = UPITextBox.Text;
+            string password = PasswordTextBox.Text;
+            int LoginDetail = DatabaseQuery.Login(upi,password);
+            switch (LoginDetail)
             {
-                if(UPITextBox.Text == reader["UPI"].ToString() & PasswordTextBox.Text == reader["Password"].ToString())
-                {
-                    a = true;
-                }
-            }
-            if ( a == false)
-            {
-                this.LoginDetailLabel.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("Welcome");
+                case 0:
+                    LoginDetailLabel.Visible = true;
+                    break;
+                case 1:
+                    MessageBox.Show("Welcome Student");
+                    Student student = new Student(upi);
+                    student.Location = this.Location;
+                    student.StartPosition = this.StartPosition;
+                    student.Size = this.Size;
+                    //student.LoginUPI = upi;
+                    //MessageBox.Show("LoginUPI is " + student.LoginUPI + "UPI is " + upi);
+                    student.Show();
+                    this.Hide();
+                    break;
+                case 2:
+                    MessageBox.Show("Welcome Lecturer");
+                    break;
+                case 3:
+                    MessageBox.Show("Welcome Dean");
+                    Dean dean = new Dean();
+                    dean.Location = this.Location;
+                    dean.StartPosition = this.StartPosition;
+                    dean.Size = this.Size;
+                    dean.Show();
+                    this.Hide();
+                    break;
             }
         }
     }

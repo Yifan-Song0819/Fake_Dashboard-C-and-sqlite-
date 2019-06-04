@@ -1,38 +1,22 @@
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/Fake_Dashboard.exe.config
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/Fake_Dashboard.exe
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/Fake_Dashboard.pdb
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.csprojAssemblyReference.cache
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.DashBorad.resources
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.Properties.Resources.resources
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.csproj.GenerateResource.cache
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.csproj.CoreCompileInputs.cache
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.exe
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.pdb
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/EntityFramework.dll
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/EntityFramework.SqlServer.dll
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/System.Data.SQLite.dll
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/System.Data.SQLite.EF6.dll
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/System.Data.SQLite.Linq.dll
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/EntityFramework.xml
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/EntityFramework.SqlServer.xml
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/System.Data.SQLite.xml
-D:/vs c# program/repos/Fake_Dashboard/bin/Debug/System.Data.SQLite.dll.config
-D:/vs c# program/repos/Fake_Dashboard/obj/Debug/Fake_Dashboard.csproj.CopyComplete
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/Fake_Dashboard.exe.config
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/Fake_Dashboard.exe
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/Fake_Dashboard.pdb
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/EntityFramework.dll
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/EntityFramework.SqlServer.dll
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/EntityFramework.xml
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/EntityFramework.SqlServer.xml
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.csprojAssemblyReference.cache
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.DashBorad.resources
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.Properties.Resources.resources
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.csproj.GenerateResource.cache
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.csproj.CoreCompileInputs.cache
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.csproj.CopyComplete
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.exe
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/obj/Debug/Fake_Dashboard.pdb
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/System.Data.SQLite.Mac.dll
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/System.Data.SQLite.Mac.xml
-/Users/jamessong/Desktop/git/Fake_Dashboard-C-and-sqlite-/Fake_Dashboard/bin/Debug/System.Data.SQLite.Mac.dll.config
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\Fake_Dashboard.exe.config
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\Fake_Dashboard.exe
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\Fake_Dashboard.pdb
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.csprojAssemblyReference.cache
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.DashBorad.resources
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.Properties.Resources.resources
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.csproj.GenerateResource.cache
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.csproj.CoreCompileInputs.cache
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.exe
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.pdb
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\EntityFramework.dll
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\EntityFramework.SqlServer.dll
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.dll
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.EF6.dll
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.Linq.dll
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\EntityFramework.xml
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\EntityFramework.SqlServer.xml
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.xml
+D:\vs c# program\repos\Fake_Dashboard\bin\Debug\System.Data.SQLite.dll.config
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.csproj.CopyComplete
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.Dean.resources
+D:\vs c# program\repos\Fake_Dashboard\obj\Debug\Fake_Dashboard.Student.resources
