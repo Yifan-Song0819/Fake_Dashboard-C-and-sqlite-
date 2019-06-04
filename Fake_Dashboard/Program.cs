@@ -19,6 +19,8 @@ namespace Fake_Dashboard
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DashBorad());
+            
+
         }
     }
 }
