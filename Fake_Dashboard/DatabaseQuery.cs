@@ -80,5 +80,14 @@ namespace Fake_Dashboard
             cb.Items.AddRange(CourseNumList.ToArray());
             cb.Text = cb.Items[0].ToString();
         }
+
+        public static void ShowCourseDataTable(DataGridView dataview, string upi)
+        {
+            string sqlQuery = "SELECT c.CourseNum, sc.CourseMark From StudentCourse sc INNER JOIN Student s on sc.StudentID = s.StudentID INNER JOIN Course c on sc.CourseID = c.CourseID WHERE s.UPI = '" + upi + "'";
+            SQLiteDataAdapter mAdapter = new SQLiteDataAdapter(sqlQuery, dbconnection);
+            DataTable dt = new DataTable();
+            mAdapter.Fill(dt);
+            dataview.DataSource = dt;
+        }
     }
 }

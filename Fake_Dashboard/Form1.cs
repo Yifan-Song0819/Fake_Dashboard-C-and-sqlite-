@@ -63,6 +63,14 @@ namespace Fake_Dashboard
                     break;
                 case 1:
                     MessageBox.Show("Welcome Student");
+                    Student student = new Student(upi);
+                    student.Location = this.Location;
+                    student.StartPosition = this.StartPosition;
+                    student.Size = this.Size;
+                    //student.LoginUPI = upi;
+                    //MessageBox.Show("LoginUPI is " + student.LoginUPI + "UPI is " + upi);
+                    student.Show();
+                    this.Hide();
                     break;
                 case 2:
                     MessageBox.Show("Welcome Lecturer");
