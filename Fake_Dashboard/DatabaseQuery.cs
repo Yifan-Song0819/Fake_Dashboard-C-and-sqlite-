@@ -31,14 +31,18 @@ namespace Fake_Dashboard
                     switch (reader["Identity"])
                     {
                         case "Student":
+                            reader.Close();
                             return 1;
                         case "Lecturer":
+                            reader.Close();
                             return 2;
                         case "Dean":
+                            reader.Close();
                             return 3;
                     }
                 }
             }
+            reader.Close();
             return 0;
         }
 
@@ -79,6 +83,7 @@ namespace Fake_Dashboard
             }
             cb.Items.AddRange(CourseNumList.ToArray());
             cb.Text = cb.Items[0].ToString();
+            reader.Close();
         }
 
         public static void ShowCourseDataTable(DataGridView dataview, string upi)
@@ -88,6 +93,26 @@ namespace Fake_Dashboard
             DataTable dt = new DataTable();
             mAdapter.Fill(dt);
             dataview.DataSource = dt;
+        }
+
+        public static PeopleProfile GetProfile(string upi)
+        {
+            string sql = "SELECT * FROM People WHERE UPI = '" + upi + "'";
+            SQLiteCommand command = new SQLiteCommand(sql, dbconnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+            PeopleProfile profile = new PeopleProfile(upi);
+            while (reader.Read())
+            {
+                MessageBox.Show("DATABASEREADER NO PROBLEM");
+                profile.Password = reader["Password"].ToString();
+                profile.FirstName = reader["FirstName"].ToString();
+                profile.Surname = reader["Surname"].ToString();
+                profile.Gender = reader["Gender"].ToString();
+                profile.DateOfBirth = reader["DateOfBirth"].ToString();
+                profile.Email = reader["Email"].ToString();
+                profile.PhoneNum = reader["PhoneNum"].ToString();
+            }
+            return profile;
         }
     }
 }
