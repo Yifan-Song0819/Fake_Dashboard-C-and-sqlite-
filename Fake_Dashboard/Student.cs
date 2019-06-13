@@ -12,8 +12,10 @@ namespace Fake_Dashboard
 {
     public partial class Student : Form
     {
+        private string upi;
         public Student(string LoginUPI)
         {
+            upi = LoginUPI;
             InitializeComponent();
             MessageBox.Show(LoginUPI);
             DatabaseQuery.ShowCourseDataTable(this.StudentDataTable, LoginUPI);
@@ -24,6 +26,10 @@ namespace Fake_Dashboard
             Application.Exit();
         }
 
-
+        private void StudentsDetailButton_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(upi);
+            profile.Show();
+        }
     }
 }
