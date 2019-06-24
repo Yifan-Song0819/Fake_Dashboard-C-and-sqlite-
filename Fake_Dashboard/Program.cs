@@ -15,9 +15,12 @@ namespace Fake_Dashboard
         [STAThread]
         static void Main()
         {
+            DatabaseQuery.ConnectingDatabase();//PROBABLY NEED TO CHANGE WITH CLOSE METHOD FOR EACH METHOD IN DATABASEQUERY.CS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new DashBorad());
+            
+
         }
     }
 }
