@@ -140,26 +140,7 @@ namespace F_D
                 storeModel.AppendValues(course_num_des[i], courseMarkList[i].ToString(), gradeLevelList[i]);
             }
 
-            //string s1 = "cs350";
-            //string s2 = "88";
-            //string s3 = "A";
-            //storeModel.AppendValues(s1 + s2, s2, s3);
 
-            //Console.WriteLine("courseIdList");
-            //for (int i = 0; i < courseIdList.Count; i++)
-            //{
-            //    Console.WriteLine(courseIdList[i]);
-            //}
-            //Console.WriteLine("courseMarkList");
-            //for (int i = 0; i < courseMarkList.Count; i++)
-            //{
-            //    Console.WriteLine(courseMarkList[i]);
-            //}
-            //Console.WriteLine("gradeIdList");
-            //for (int i = 0; i < gradeIdList.Count; i++)
-            //{
-            //    Console.WriteLine(gradeIdList[i]);
-            //}
         }
 
         protected void Close_button(object sender, EventArgs e)

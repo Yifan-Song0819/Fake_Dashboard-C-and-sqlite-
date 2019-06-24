@@ -46,6 +46,10 @@ namespace F_D
 
 		private global::Gtk.Entry entry3;
 
+		private global::Gtk.ScrolledWindow GtkScrolledWindow1;
+
+		private global::Gtk.NodeView nodeview2;
+
 		protected virtual void Build()
 		{
 			global::Stetic.Gui.Initialize(this);
@@ -232,6 +236,20 @@ namespace F_D
 			global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.entry3]));
 			w20.X = 597;
 			w20.Y = 282;
+			// Container child fixed1.Gtk.Fixed+FixedChild
+			this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow();
+			this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
+			this.GtkScrolledWindow1.ShadowType = ((global::Gtk.ShadowType)(1));
+			// Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
+			this.nodeview2 = new global::Gtk.NodeView();
+			this.nodeview2.CanFocus = true;
+			this.nodeview2.ExtensionEvents = ((global::Gdk.ExtensionMode)(1));
+			this.nodeview2.Name = "nodeview2";
+			this.GtkScrolledWindow1.Add(this.nodeview2);
+			this.fixed1.Add(this.GtkScrolledWindow1);
+			global::Gtk.Fixed.FixedChild w22 = ((global::Gtk.Fixed.FixedChild)(this.fixed1[this.GtkScrolledWindow1]));
+			w22.X = 168;
+			w22.Y = 94;
 			this.Add(this.fixed1);
 			if ((this.Child != null))
 			{

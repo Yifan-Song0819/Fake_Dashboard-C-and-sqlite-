@@ -8,6 +8,7 @@ namespace F_D
     public partial class LecturerWindow : Gtk.Window
     {
         public string user;
+        public ListStore storeModel;
         public LecturerWindow(string user) :
                 base(Gtk.WindowType.Toplevel)
         {
@@ -16,6 +17,7 @@ namespace F_D
             updateNames();
             Show_papers();
             //test();
+            create_nodes();
         }
 
         protected void updateNames()
@@ -23,6 +25,40 @@ namespace F_D
             label1.Text = "Welcome!";
             label2.Text = user;
         }
+
+        protected void create_nodes()
+        {
+
+            nodeview2.SetSizeRequest(300, 150);
+            storeModel = new ListStore(typeof(string), typeof(string), typeof(string));
+            var courseCol = new TreeViewColumn("Courses", new CellRendererText(), "text", 0);
+            nodeview2.AppendColumn(courseCol);
+            //var markCol = new TreeViewColumn("Mark", new CellRendererText(), "text", 1);
+            //nodeview2.AppendColumn(markCol);
+            //var gradeCol = new TreeViewColumn("Grade", new CellRendererText(), "text", 2);
+            //nodeview2.AppendColumn(gradeCol);
+
+            courseCol.MaxWidth = 350;
+            courseCol.MinWidth = 350;
+            //markCol.MaxWidth = 100;
+            //markCol.MinWidth = 100;
+            //gradeCol.MaxWidth = 100;
+            //gradeCol.MinWidth = 100;
+
+            nodeview2.Model = storeModel;
+
+        }
+
+
+        protected void Show_papers()
+        {
+            int lecturerID = get_lecturer_id(user);
+            //Console.WriteLine(lecturerID);
+            List<int> papersID = new List<int>();
+            papersID = get_papers_id(lecturerID);
+
+        }
+
         protected int get_lecturer_id(string user)
         {
             db dataBaseOb = new db();
@@ -93,74 +129,14 @@ namespace F_D
             return res;
         }
 
-        protected void show_buttons(List<int> papersId)
-        {
-            int x = 50;
-            int y = 80;
-            for (int i = 0; i < papersId.Count; i++)
-            {
-                string btnName = get_paper_detail(papersId[i]);
-                //Console.WriteLine(btnName);
-                Button abtn = new Button(btnName);
-                abtn.SetSizeRequest(250, 100);
-                abtn.SetUposition(x, y);
-                abtn.Clicked += new EventHandler(paper_button);
-                this.fixed1.Add(abtn);
-                abtn.Show();
-                if (x > 549)
-                {
-                    x = 50;
-                    y = 190;
-                }
-                else
-                {
-                    x = x + 255;
-                }
 
-            }
-        }
 
         protected void paper_button(object sender, EventArgs e)
         {
-
+            Console.WriteLine();
         }
+
         // show the papers what the lecturer in charge
-        protected void Show_papers()
-        {
-            int lecturerID = get_lecturer_id(user);
-            //Console.WriteLine(lecturerID);
-            List<int> papersID = new List<int>();
-            papersID = get_papers_id(lecturerID);
-            //for(int i = 0; i < papersID.Count; i++)
-            //{
-            //    Console.WriteLine(papersID[i]);
-            //}
-            show_buttons(papersID);
-        }
-
-
-        protected void test()
-        {
-            int x = 100;
-
-            for (int i = 1; i < 4; i++)
-            {
-                Button abtn = new Button("lol");
-                abtn.SetSizeRequest(100, 100);
-                abtn.SetUposition(x, 100);
-                abtn.Clicked += new EventHandler(test_btn);
-                this.fixed1.Add(abtn);
-                abtn.Show();
-                x = x + 200;
-            }
-
-
-        }
-
-        protected void test_btn(object sender, EventArgs e)
-        {
-            Console.WriteLine("new one!!!!");
-        }
 
     }
 }
