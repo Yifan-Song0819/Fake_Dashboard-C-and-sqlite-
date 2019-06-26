@@ -15,7 +15,6 @@ namespace F_D
             this.user = user;
             this.Build();
             updateNames();
-            Show_papers();
             //test();
             create_nodes();
         }
@@ -29,7 +28,7 @@ namespace F_D
         protected void create_nodes()
         {
 
-            nodeview2.SetSizeRequest(300, 150);
+            nodeview2.SetSizeRequest(600, 200);
             storeModel = new ListStore(typeof(string), typeof(string), typeof(string));
             var courseCol = new TreeViewColumn("Courses", new CellRendererText(), "text", 0);
             nodeview2.AppendColumn(courseCol);
@@ -46,18 +45,11 @@ namespace F_D
             //gradeCol.MinWidth = 100;
 
             nodeview2.Model = storeModel;
-
+            storeModel.AppendValues("cs335");
         }
 
 
-        protected void Show_papers()
-        {
-            int lecturerID = get_lecturer_id(user);
-            //Console.WriteLine(lecturerID);
-            List<int> papersID = new List<int>();
-            papersID = get_papers_id(lecturerID);
-
-        }
+        
 
         protected int get_lecturer_id(string user)
         {

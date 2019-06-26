@@ -126,8 +126,6 @@ namespace F_D
             object a_ob = a_command.ExecuteScalar();
             studentId = a_ob.ToString();
             dataBaseOb.myConnection.Close();
-
-
             List<int> courseIdList = getData(studentId, "CourseID");
             //Console.WriteLine("lmao");
             List<int> courseMarkList = getData(studentId, "CourseMark");

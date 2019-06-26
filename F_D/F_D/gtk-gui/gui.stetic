@@ -938,76 +938,6 @@ Secret</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Label" id="label3">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label3</property>
-          </widget>
-          <packing>
-            <property name="X">640</property>
-            <property name="Y">46</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label4">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label4</property>
-          </widget>
-          <packing>
-            <property name="X">215</property>
-            <property name="Y">127</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label5">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label5</property>
-          </widget>
-          <packing>
-            <property name="X">368</property>
-            <property name="Y">120</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label6">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label6</property>
-          </widget>
-          <packing>
-            <property name="X">528</property>
-            <property name="Y">132</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label7">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label7</property>
-          </widget>
-          <packing>
-            <property name="X">663</property>
-            <property name="Y">133</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label8">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label8</property>
-          </widget>
-          <packing>
-            <property name="X">205</property>
-            <property name="Y">203</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Label" id="label9">
-            <property name="MemberName" />
-            <property name="LabelProp" translatable="yes">label9</property>
-          </widget>
-          <packing>
-            <property name="X">380</property>
-            <property name="Y">211</property>
-          </packing>
-        </child>
-        <child>
           <widget class="Gtk.Button" id="button1">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
@@ -1021,17 +951,28 @@ Secret</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button2">
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <placeholder />
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry3">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
-            <property name="UseUnderline">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
           </widget>
           <packing>
-            <property name="X">353</property>
-            <property name="Y">386</property>
+            <property name="X">461</property>
+            <property name="Y">332</property>
           </packing>
+        </child>
+        <child>
+          <placeholder />
         </child>
         <child>
           <widget class="Gtk.Button" id="button3">
@@ -1042,8 +983,8 @@ Secret</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
-            <property name="X">494</property>
-            <property name="Y">398</property>
+            <property name="X">370</property>
+            <property name="Y">379</property>
           </packing>
         </child>
         <child>
@@ -1055,100 +996,15 @@ Secret</property>
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
-            <property name="X">645</property>
-            <property name="Y">377</property>
+            <property name="X">511</property>
+            <property name="Y">370</property>
           </packing>
+        </child>
+        <child>
+          <placeholder />
         </child>
         <child>
           <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
-            <property name="MemberName" />
-            <property name="ShadowType">In</property>
-            <child>
-              <widget class="Gtk.NodeView" id="nodeview1">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="ShowScrollbars">True</property>
-              </widget>
-            </child>
-          </widget>
-          <packing>
-            <property name="X">267</property>
-            <property name="Y">288</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="button5">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
-            <property name="UseUnderline">True</property>
-          </widget>
-          <packing>
-            <property name="X">227</property>
-            <property name="Y">443</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Button" id="button6">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">GtkButton</property>
-            <property name="UseUnderline">True</property>
-          </widget>
-          <packing>
-            <property name="X">368</property>
-            <property name="Y">455</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entry1">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">●</property>
-          </widget>
-          <packing>
-            <property name="X">408</property>
-            <property name="Y">292</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entry2">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">●</property>
-          </widget>
-          <packing>
-            <property name="X">457</property>
-            <property name="Y">244</property>
-          </packing>
-        </child>
-        <child>
-          <widget class="Gtk.Entry" id="entry3">
-            <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="IsEditable">True</property>
-            <property name="InvisibleChar">●</property>
-          </widget>
-          <packing>
-            <property name="X">597</property>
-            <property name="Y">282</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <placeholder />
-        </child>
-        <child>
-          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
             <property name="MemberName" />
             <property name="ShadowType">In</property>
             <child>
@@ -1161,7 +1017,7 @@ Secret</property>
             </child>
           </widget>
           <packing>
-            <property name="X">168</property>
+            <property name="X">89</property>
             <property name="Y">94</property>
           </packing>
         </child>
